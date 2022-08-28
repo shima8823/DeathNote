@@ -11,17 +11,19 @@ class SecondViewController: UIViewController {
     
     @IBOutlet weak var nameField: UITextField!
     
-    
     @IBOutlet weak var datePicker: UIDatePicker!
     
-    @IBOutlet weak var descriptionField: UITextField!
+    @IBOutlet weak var descriptionTextView: UITextView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-
         datePicker.minimumDate = Date()
+        
+        descriptionTextView.layer.borderColor = UIColor(named: "descriptionTextView")?.cgColor
+        descriptionTextView.layer.borderWidth = 1.0
     }
     
 

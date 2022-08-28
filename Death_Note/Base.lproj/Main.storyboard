@@ -123,7 +123,7 @@
                                 </connections>
                             </textField>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="j5V-7f-wpb">
-                                <rect key="frame" x="47" y="165" width="320" height="65"/>
+                                <rect key="frame" x="47" y="155" width="320" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="3eH-qG-jWW"/>
                                 </constraints>
@@ -132,26 +132,28 @@
                                 </date>
                                 <locale key="locale" localeIdentifier="ja_JP"/>
                             </datePicker>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x69-Ob-3lh">
-                                <rect key="frame" x="20" y="250" width="374" height="210.5"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iSY-Ko-GAw">
+                                <rect key="frame" x="29" y="240" width="356" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="x69-Ob-3lh" secondAttribute="height" multiplier="16:9" id="vG5-Dh-3Wo"/>
+                                    <constraint firstAttribute="height" constant="200" id="kGP-tx-jTd"/>
+                                    <constraint firstAttribute="width" secondItem="iSY-Ko-GAw" secondAttribute="height" multiplier="16:9" id="vhS-uO-Pet"/>
                                 </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="803-1k-Rkr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Igu-RU-iLl" firstAttribute="top" secondItem="803-1k-Rkr" secondAttribute="top" id="6eb-pN-kWZ"/>
-                            <constraint firstItem="x69-Ob-3lh" firstAttribute="top" secondItem="j5V-7f-wpb" secondAttribute="bottom" constant="20" id="LQL-uU-VDc"/>
                             <constraint firstItem="j5V-7f-wpb" firstAttribute="centerX" secondItem="YHY-hq-n3s" secondAttribute="centerX" id="Qo0-bG-4vs"/>
                             <constraint firstItem="Igu-RU-iLl" firstAttribute="leading" secondItem="803-1k-Rkr" secondAttribute="leading" constant="20" id="Sed-gw-lkd"/>
-                            <constraint firstItem="803-1k-Rkr" firstAttribute="trailing" secondItem="x69-Ob-3lh" secondAttribute="trailing" constant="20" id="Y80-tB-TGv"/>
-                            <constraint firstItem="x69-Ob-3lh" firstAttribute="leading" secondItem="803-1k-Rkr" secondAttribute="leading" constant="20" id="fNk-Hp-TEj"/>
+                            <constraint firstItem="iSY-Ko-GAw" firstAttribute="top" secondItem="j5V-7f-wpb" secondAttribute="bottom" constant="20" id="eaV-NN-I5E"/>
                             <constraint firstItem="803-1k-Rkr" firstAttribute="trailing" secondItem="Igu-RU-iLl" secondAttribute="trailing" constant="20" id="him-NB-cKo"/>
-                            <constraint firstItem="j5V-7f-wpb" firstAttribute="top" secondItem="Igu-RU-iLl" secondAttribute="bottom" constant="15" id="i4y-So-7fq"/>
+                            <constraint firstItem="j5V-7f-wpb" firstAttribute="top" secondItem="Igu-RU-iLl" secondAttribute="bottom" constant="5" id="i4y-So-7fq"/>
+                            <constraint firstItem="iSY-Ko-GAw" firstAttribute="centerX" secondItem="YHY-hq-n3s" secondAttribute="centerX" id="tyU-TU-kZ1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add a Person" id="Ios-1M-4kq">
@@ -159,7 +161,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="datePicker" destination="j5V-7f-wpb" id="bT1-hy-4eg"/>
-                        <outlet property="descriptionField" destination="x69-Ob-3lh" id="GRQ-Gd-kmS"/>
+                        <outlet property="descriptionTextView" destination="iSY-Ko-GAw" id="u22-cw-5ZB"/>
                         <outlet property="nameField" destination="Igu-RU-iLl" id="roi-60-Opr"/>
                     </connections>
                 </viewController>
@@ -189,6 +191,9 @@
     </scenes>
     <resources>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
