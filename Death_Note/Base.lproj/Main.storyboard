@@ -157,7 +157,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add a Person" id="Ios-1M-4kq">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="zIt-5o-qBY"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="zIt-5o-qBY">
+                            <connections>
+                                <action selector="doneButtonItem:" destination="tLM-Nj-8vD" id="QE3-Ll-0Kj"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="datePicker" destination="j5V-7f-wpb" id="bT1-hy-4eg"/>

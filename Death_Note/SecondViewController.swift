@@ -15,6 +15,14 @@ class SecondViewController: UIViewController {
     
     @IBOutlet weak var descriptionTextView: UITextView!
     
+    @IBAction func doneButtonItem(_ sender: Any) {
+        print("done")
+        if let name = nameField.text, !(name.isEmpty) {
+            addPersonInfoToModel(name: name)
+        }
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +32,12 @@ class SecondViewController: UIViewController {
         
         descriptionTextView.layer.borderColor = UIColor(named: "descriptionTextView")?.cgColor
         descriptionTextView.layer.borderWidth = 1.0
+    }
+    
+    func addPersonInfoToModel(name: String) {
+        let df = DateFormatter()
+        df.dateFormat = "yyyy MM dd HH:mm:ss"
+        ViewController.data.personInfo.append((name, df.string(from: datePicker.date), descriptionTextView.text))
     }
     
 

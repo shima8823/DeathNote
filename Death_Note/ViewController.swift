@@ -11,20 +11,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBOutlet weak var tableView: UITableView!
     
+    static var data = Data()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print(ViewController.data)
+        tableView.reloadData()
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Data.personInfo.count
+        return ViewController.data.personInfo.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "personInfoCell") as! personInfoTableViewCell
-        cell.personInfo = Data.personInfo[indexPath.row]
+        cell.personInfo = ViewController.data.personInfo[indexPath.row]
         return cell
     }
 }
