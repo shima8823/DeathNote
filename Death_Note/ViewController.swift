@@ -30,6 +30,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "personInfoCell") as! personInfoTableViewCell
+        cell.layer.borderColor = UIColor(named: "frameBorderOfCell")?.cgColor
+        cell.layer.borderWidth = 3
+        let cellImage = UIImageView()
+        cellImage.image = UIImage(named: "old-paper")
+        cellImage.contentMode = .scaleToFill
+        cell.backgroundView = cellImage
         cell.personInfo = ViewController.data.personInfo[indexPath.row]
         return cell
     }
