@@ -17,6 +17,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(foreground(notification:)),
+                                               name: UIApplication.willEnterForegroundNotification,
+                                               object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,5 +42,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.backgroundView = cellImage
         cell.personInfo = ViewController.data.personInfo[indexPath.row]
         return cell
+    }
+    
+    @objc func foreground(notification: Notification) {
+        tableView.reloadData()
     }
 }
