@@ -34,10 +34,10 @@ class SecondViewController: UIViewController {
         descriptionTextView.layer.borderWidth = 1.0
     }
     
-    func addPersonInfoToModel(name: String) {
+    private func addPersonInfoToModel(name: String) {
         let df = DateFormatter()
         df.dateFormat = "yyyy MM dd HH:mm:ss"
-        ViewController.data.personInfo.append((name, df.string(from: datePicker.date), descriptionTextView.text))
+        Data.personInfo.append((name, df.string(from: datePicker.date), descriptionTextView.text))
     }
     
 

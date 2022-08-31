@@ -11,9 +11,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBOutlet weak var tableView: UITableView!
     
-    static var data = Data()
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -24,12 +21,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print(ViewController.data)
         tableView.reloadData()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ViewController.data.personInfo.count
+        return Data.personInfo.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -40,7 +36,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cellImage.image = UIImage(named: "old-paper")
         cellImage.contentMode = .scaleToFill
         cell.backgroundView = cellImage
-        cell.personInfo = ViewController.data.personInfo[indexPath.row]
+        cell.personInfo = Data.personInfo[indexPath.row]
         return cell
     }
     

@@ -8,7 +8,7 @@
 import Foundation
 
 struct Data {
-    var personInfo: [(String, String, String)] = [
+    static var personInfo: [(String, String, String)] = [
         ("渋井丸拓男", "", "事故死"),
         ("Raye Penber", "2006 12 27 16:41:00", "心臓麻痺")
     ]
